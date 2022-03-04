@@ -30,8 +30,10 @@
 
 	<p>Unfortunately, We do not have recommendations for any movie with that title!</p>
 
+	{% if not session.logged_in%}
 	<button><a href={{url_for("register")}}>Sign Up</a></button> <span>to see the full list of movie recommendations</span>
 
+	{% endif %}
 	</div>
 	
 
