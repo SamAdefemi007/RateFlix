@@ -32,7 +32,7 @@
 				</form>
 		</div>
 		{% if session["name"] and session["logged_in"] %}<p id="welcome">Welcome, {{session["name"]}}</p><button id="logout"><a href="{{ url_for("logout") }}">Logout</a></button>
-			{% else %}<button type="button"> <a href="#">Login/Register</a></button>
+			{% else %}<button type="button"> <a href={{url_for("register")}}>Login/Register</a></button>
 			 {% endif %}
 
 	</nav>

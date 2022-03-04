@@ -83,3 +83,19 @@ def querysearch(query):
 
     return render_template('user_search.html', rows=rows, result=result)
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method=="POST":
+            firstname = request.form.get("firstname")
+            lastname = request.form.get("lastname")
+            email=request.form.get("email")
+            genre=  request.form.get("genre")
+            password = request.form.get("password")
+            connect_db_row()
+            cursor.execute("INSERT INTO users VALUES(NULL,?,?,?,?,?, NULL)", (firstname, lastname, email,password, genre))
+            connection.commit()
+            connection.close()
+            session["name"] = firstname
+            session["logged_in"]= True
+            return redirect(url_for("movies"))
+    return render_template("register.html")

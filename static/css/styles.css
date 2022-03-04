@@ -175,3 +175,65 @@ align-items: center;
 button a{
     text-decoration: none;
 }
+
+.register-form{
+    color:black;
+    margin:auto;
+    width: 15%;
+    font-size: large;
+}
+
+
+.register-form input, .register-form select{
+    display: block;
+    margin-bottom: 2em;
+    padding: 7px;
+    border:2px solid black;
+}
+.register-form button{
+    margin-top: 2em;
+    display: block;
+    margin-bottom: 2em;
+    padding:10px;
+    border: 2px solid #E50914;
+    background-color: black;
+    color: whitesmoke;
+}
+.register-form button:hover{
+    background-color: greenyellow;
+    color: #E50914;
+}
+.register-form label{
+    color: firebrick;
+}
+
+#login-page{
+    background-image: url("/static/imgs/bg-login2.jpeg");
+    height: 1000px;
+    background-size: contain;
+}
+
+.register-form h3{
+    font-size: x-large;
+}
+
+.login-button{
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+
+.login-button span{
+    margin-left: 70px;
+}
+
+.login-button button{
+    font-size: medium;
+    padding: .5em;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+
+.login-button button:hover{
+    background-color: #E50914;
+}

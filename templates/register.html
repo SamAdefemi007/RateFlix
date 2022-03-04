@@ -1,0 +1,52 @@
+{%  extends 'base.html' %}
+
+{%  block page_content %}
+	<div id="login-page">
+	<form class="register-form" action="{{ url_for("register") }}", method="POST">
+
+		<h3> Create an account</h3>
+		<label for="firstname">First Name</label>
+		<input size="50" type="text" name="firstname">
+
+		<label for="lastname">Last Name</label>
+		<input size="50" type="text" name="lastname">
+
+		<label for="email">Email Address</label>
+		<input size="70" type="email" name="email">
+
+		<label for="password">Please Enter your password</label>
+		<input size="30" type="password" name="password">
+
+		<label for="confirm_password">Please confirm your password</label>
+		<input size="30" type="password" name="password2" required>
+
+		<label for="genre">Favorite Genre</label>
+		<select name="genre">
+			<option disabled selected="selected">Select your favorite</option>
+			<option value="comedy">Comedy</option>
+			<option value="action" >Action</option>
+			<option value="adventure">Adventure</option>
+			<option value="romance">Romance</option>
+			<option value="sci-fi">SCI-FI</option>
+			<option value="thriller">Thriller</option>
+			<option value="horror">Horror</option>
+			<option value="fantasy">Fantasy</option>
+			<option value="crime">Crime</option>
+			<option value="reality-tv">Reality-TV</option>
+			<option value="biography">Biography</option>
+			<option value="musicals">Musicals</option>
+			<option value="mystery">Mystery</option>
+
+
+		</select>
+
+		<button type="submit">Create Account</button>
+
+	</form>
+	<div class="login-button">
+
+		<span>Do you have an account, click here to </span><button><a href="#">Login</a></button>
+	</div>
+
+</div>
+{%  endblock %}
