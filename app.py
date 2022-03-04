@@ -1,6 +1,6 @@
 import sqlite3
 import os, binascii
-from flask import Flask, render_template, session, request, redirect, url_for
+from flask import Flask, render_template, session, request, redirect, url_for, flash
 
 app = Flask(__name__)
 app.config["SECRET_KEY"]= binascii.hexlify(os.urandom(32))
@@ -93,13 +93,22 @@ def register():
             email=request.form.get("email")
             genre=  request.form.get("genre")
             password = request.form.get("password")
+            password2 = request.form.get("password2")
             connect_db_row()
-            cursor.execute("INSERT INTO users VALUES(NULL,?,?,?,?,?, NULL)", (firstname, lastname, email,password, genre))
-            connection.commit()
-            connection.close()
-            session["name"] = firstname
-            session["logged_in"]= True
-            return redirect(url_for("movies"))
+            cursor.execute("SELECT EMAIL FROM users WHERE users.EMAIL = ?",(email,))
+            value = cursor.fetchall()
+            if value:
+                flash("This email address is already registered, please go to the login page to Sign in ")
+                return redirect(url_for('register'))
+            elif password!=password2:
+                flash("Error! the passwords do not match!")
+            else:
+                cursor.execute("INSERT INTO users VALUES(NULL,?,?,?,?,?, NULL)", (firstname, lastname, email,password, genre))
+                connection.commit()
+                connection.close()
+                session["name"] = firstname
+                session["logged_in"]= True
+                return redirect(url_for("movies"))     
     return render_template("register.html")
 
 

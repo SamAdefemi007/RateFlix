@@ -37,6 +37,15 @@
 
 	</nav>
 	<hr>
+	{% with messages = get_flashed_messages() %}
+  		{% if messages %}
+    		<ul class=flashes>
+    			{% for message in messages %}
+      				<li>{{ message }}</li>
+    			{% endfor %}
+    		</ul>
+  		{% endif %}
+	{% endwith %}
 {% endblock %}
 {% block body %}
 	{% block page_content %}
@@ -48,7 +57,7 @@
 			{% if not session.logged_in %}
 	<div id="btn-large">
 		<h3> Login/signup to get the complete list of movie recommendations</h3>
-		<button id="button_large"><a href="#">Click here to get started</a></button>
+		<button id="button_large"><a href={{url_for("register")}}>Click here to get started</a></button>
 	</div>
 	{% endif %}
 

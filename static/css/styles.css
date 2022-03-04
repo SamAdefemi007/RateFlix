@@ -251,7 +251,7 @@ button a{
 
 .login-form{
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .login-form input, .login-form label{
     display: block;
@@ -297,4 +297,27 @@ button a{
 }
 #not-found button{
     font-size: large;
+}
+
+.flashes{
+    width: 100%;
+    color: #E50914;
+    height: 20px;
+    text-align: center;
+    font-size: large;
+    list-style-type: none;
+    background-color: lightgray;
+}
+
+#link-reg{
+    width: 25%;
+    margin:auto;
+    margin-bottom: 150px;
+}
+
+#link-reg button{
+    font-size: medium;
+    padding: .5em;
+    margin-top: -10px;
+    margin-left: 5px;
 }
