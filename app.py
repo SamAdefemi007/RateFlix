@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, session
+from flask import Flask, render_template, session, request
 
 app = Flask(__name__)
 
@@ -65,3 +65,21 @@ def kidshow():
     connection.close()
 
     return render_template('kidshow.html', rows=rows)
+
+
+
+@app.route('/<query>')
+def querysearch(query):
+    if query:
+        result = request.args.get("search")
+        parsed = "%"+ result  +"%"
+        connect_db_row()
+        cursor.execute("Select * from movie INNER JOIN ratings ON ratings.MOVIE_ID = movie.MOVIE_ID WHERE movie.MOVIE_TITLE Like ? ORDER BY ratings.RATING DESC", (parsed,))
+        rows = cursor.fetchall()
+        connection.close()
+
+    else:
+        return redirect(url_for('/'))
+
+    return render_template('user_search.html', rows=rows, result=result)
+

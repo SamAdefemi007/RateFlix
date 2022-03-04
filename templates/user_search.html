@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+
+{% block page_content %}
+
+	{{ super() }}
+	<h2 id="header"> Please see below the Top 100 rated movies</h2>
+	<div class="page-movie">
+		{% for row in rows %}
+
+			<div class="movie-card">
+			<img src="/static/imgs/movie-placeholder.jpeg">
+			<h3>Title:  <span class="movie-title">{{ row["MOVIE_TITLE"] |capitalize}}</span> |
+				<span id="ratings"><img src="/static/imgs/review.png"></span> {{ row["RATING"] }} </h3>
+
+			<p><italic>Genre: {{ row["GENRE"] }}</italic></p>
+			<p>Plot: {{ row["DESCRIPTION"] }}- <span class="movie-title">{{ row["YEAR_ADDED"] }}</span></p>
+
+			</div>
+			<hr>
+
+
+
+
+	{% endfor %}
+	</div>
+
+
+
+{% endblock %}
