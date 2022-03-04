@@ -2,8 +2,10 @@ import sqlite3
 import os, binascii
 from flask import Flask, render_template, session, request, redirect, url_for, flash
 
+
 app = Flask(__name__)
-app.config["SECRET_KEY"]= binascii.hexlify(os.urandom(32))
+app.config["SECRET_KEY"]= "100775f58ee803c1e2e9f9d372babbfc717a6be43065033f8891e0eb6e387aba"
+
 DATABASE = "netflix_dbase.db"
 
 def connect_db_row():
