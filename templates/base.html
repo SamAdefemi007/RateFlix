@@ -12,16 +12,16 @@
 {% block navbar %}
 	<nav class="navbar">
 		<div>
-			<p class="logo"><a href="#">Rate<span>Flix</span></a></p>
+			<p class="logo"><a href={{url_for("index")}}>Rate<span>Flix</span></a></p>
 			<ul class="nav-links">
 				<li>
-					<a href="#">Netflix Movies</a>
+					<a href={{url_for("movies")}}>Netflix Movies</a>
 				</li>
 				<li>
-					<a href="#">Netflix TV shows</a>
+					<a href={{url_for("tvshows")}}>Netflix TV shows</a>
 				</li>
 				<li>
-					<a href="#">For Kids</a>
+					<a href={{url_for("kidshow")}}>For Kids</a>
 				</li>
 			</ul>
 		</div>
