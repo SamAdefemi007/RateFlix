@@ -8,7 +8,7 @@ def test_page_setup():
     tester= app.test_client()
     response = tester.get("/", content_type = "html/text")
     assert response.status_code ==200
-    assert response.data == b"Hello, World!"
+
 
 
 def test_db_file():
@@ -23,12 +23,12 @@ def test_db_table_creation():
     connection.close()
     #tables created successfully in the database
 
-#def test_table_data():
-    #connection =sqlite3.connect(models.DATABASE)
-    #cursor = connection.cursor()
-    #cursor.execute("SELECT count(*) from movie")
-    #assert cursor.fetchall()==[(4169,)]
-    #connection.close()
+def test_table_data():
+    connection =sqlite3.connect(models.DATABASE)
+    cursor = connection.cursor()
+    cursor.execute("SELECT count(*) from movie")
+    assert cursor.fetchall()==[(4169,)]
+    connection.close()
     #all rows in the open_data loaded successfully
     #This particular tests takes about 3-4mins to run
 
