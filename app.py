@@ -125,7 +125,10 @@ def login():
         if rows:
             session["name"] = rows[0]
             session["logged_in"] = True
-        return redirect(url_for('movies'))
+            return redirect(url_for("movies")) 
+        else:
+            flash("Incorrect username or password")
+             
     return render_template('login.html')
 
 
