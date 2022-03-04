@@ -1,0 +1,111 @@
+body{
+    background-color: #141430;
+    color: whitesmoke;
+}
+
+.logo{
+    font-size: xx-large;
+    margin-top: 0;
+    display: inline;
+    margin-right: 1em;
+    text-decoration: none;
+}
+.logo a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.logo span{
+    color: #E50914;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.nav-links, .nav-links li{
+    display: inline;
+}
+.nav-links li a{
+    text-decoration: none;
+    border: 0.5px solid black;
+    font-size: large;
+    margin-right: 1em;
+    padding: 0.3em;
+    color:whitesmoke;
+}
+.nav-links li a:hover{
+    background-color: #E50914;
+}
+.search-bar input{
+    padding: 12px 20px 12px 40px;
+    margin-top: 0.7em;
+    font-style: italic;
+    border-radius: 10px;
+    border:1px solid #E50914;
+    height: 40px;
+    background-image: url("/static/imgs/search2.svg");
+    background-position: 5px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.navbar button{
+    margin-right: 1em;
+    color: #141414;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: medium;
+    border:1px solid #E50914;
+}
+.navbar button:hover{
+    background-color: #E50914;
+}
+
+.index-bg{
+    background-image: url("/static/imgs/background.jpeg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 1000px;
+    width: 100%;
+    margin: auto;
+    color: whitesmoke;
+    text-align: center;
+}
+
+index-bg h3{
+    font-size: xx-large;
+    margin-bottom: 0;
+
+}
+
+.index-bg p{
+    font-size: large;
+    margin-top: 0;
+}
+
+.btn-index{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn-index button{
+    margin: 0 4em;
+    padding: 10px;
+    font-size: x-large;
+    background-color: #E50914;
+
+}
+
+.btn-index button a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.btn-index button:hover{
+    background-color: #141414;
+}
