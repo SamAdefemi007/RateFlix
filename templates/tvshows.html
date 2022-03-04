@@ -13,7 +13,7 @@
 			<div class="movie-card">
 			<img src="/static/imgs/tvshows.jpeg">
 			<h3>Title:  <span class="movie-title">{{ row["MOVIE_TITLE"] |capitalize}}</span> |
-				<span id="ratings"><img src="/static/imgs/review.png"></span> {{ row["RATING"] }} </h3>
+				<span id="ratings">{{ row["RATING"] }}<img src="/static/imgs/review.png"></span>  </h3>
 
 			<p><italic>Genre: {{ row["GENRE"] }}</italic></p>
 			<p>Plot: {{ row["DESCRIPTION"] }}- <span class="movie-title">{{ row["YEAR_ADDED"] }}</span></p>

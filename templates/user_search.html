@@ -3,7 +3,8 @@
 {% block page_content %}
 
 	{{ super() }}
-	<h2 id="header"> Please see below the Top 100 rated movies</h2>
+	{% if rows %}
+	<h2 id="header"> Please see below the Search Results</h2>
 	<div class="page-movie">
 		{% for row in rows %}
 
@@ -23,6 +24,19 @@
 
 	{% endfor %}
 	</div>
+	{% else %}
+
+	<div id="not-found">
+
+	<p>Unfortunately, We do not have recommendations for any movie with that title!</p>
+
+	<button><a href={{url_for("register")}}>Sign Up</a></button> <span>to see the full list of movie recommendations</span>
+
+	</div>
+	
+
+
+	{% endif %}
 
 
 

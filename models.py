@@ -2,8 +2,8 @@ import sqlite3
 import csv
 import sys
 
-#opening the connection to the database
 DATABASE = "netflix_dbase.db"
+#opening the connection to the database      
 try:
     connection =sqlite3.connect(DATABASE)
     cursor = connection.cursor()
@@ -85,3 +85,5 @@ try:
 
 except SyntaxError as error:
     print(f"Please check that you are using the correct SQL commands, {error}")
+
+

@@ -73,7 +73,8 @@ def kidshow():
 def querysearch(query):
     if query:
         result = request.args.get("search")
-        parsed = "%"+ result  +"%"
+        formatted_result = str(result)
+        parsed = "%"+ formatted_result  +"%"
         connect_db_row()
         cursor.execute("Select * from movie INNER JOIN ratings ON ratings.MOVIE_ID = movie.MOVIE_ID WHERE movie.MOVIE_TITLE Like ? ORDER BY ratings.RATING DESC", (parsed,))
         rows = cursor.fetchall()
@@ -124,3 +125,6 @@ def logout():
     session.pop("name", None)
     session["logged_in"]= False
     return redirect(url_for('index'))
+
+if __name__ == '__main__':
+    app.run(debug=True)

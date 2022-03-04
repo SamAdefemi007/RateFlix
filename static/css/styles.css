@@ -1,5 +1,5 @@
 body{
-    background-color: #141430;
+    background-color: #141414;
     color: whitesmoke;
 }
 
@@ -77,7 +77,7 @@ body{
     text-align: center;
 }
 
-index-bg h3{
+.index-bg h3{
     font-size: xx-large;
     margin-bottom: 0;
 
@@ -85,7 +85,10 @@ index-bg h3{
 
 .index-bg p{
     font-size: large;
+    font-style: italic;
     margin-top: 0;
+    color: white;
+    
 }
 
 .btn-index{
@@ -120,13 +123,15 @@ index-bg h3{
 
 .movie-card img{
     width: 200px;
+    padding:10px;
 }
 
 .movie-card{
-    border:2px solid #141414;
+    border-bottom:1px solid whitesmoke;
     margin: 7px 10px;
-    width: 15%;
-    justify-content: flex-start;
+    width: 18%;
+    justify-content: space-evenly;
+    padding:5px
 }
 
 #header{
@@ -139,7 +144,7 @@ index-bg h3{
 }
 
 #ratings img{
-   width: 30px;
+   width: 20px;
 
 }
 italic{
@@ -155,6 +160,7 @@ display: flex;
     font-size: x-large;
 align-items: center;
   flex-direction: column;
+  color: #E50914;
 }
 
 #button_large{
@@ -204,17 +210,22 @@ button a{
     color: #E50914;
 }
 .register-form label{
-    color: firebrick;
+    color: whitesmoke;
+    font-weight: 500;
 }
 
 #login-page{
-    background-image: url("/static/imgs/bg-login2.jpeg");
+    background-image: url("/static/imgs/bg2login2.jpeg");
     height: 1000px;
     background-size: contain;
+    color: whitesmoke;
 }
 
 .register-form h3{
-    font-size: x-large;
+    font-size: large;
+    color: whitesmoke;
+    padding-top: 50px;
+
 }
 
 .login-button{
@@ -256,5 +267,34 @@ button a{
 #submit{
     background-color: #E50914;
     width: 100px;
+    font-size: large;
+}
+
+.login-form input{
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+#subm{
+    width: 100px;
+    margin:auto;
+    background-color: tomato;
+}
+
+#not-found{
+
+    width: 50%;
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top:50px;
+    font-size: large;
+}
+
+#not-found p{
+    color: #E50914;
+    font-size: larger;
+}
+#not-found button{
     font-size: large;
 }
