@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+	<meta charset="UTF-8">
+	<title>Rate-Flix-The best Netflix recommendations</title>
+	<link rel="stylesheet" href="/static/css/styles.css">
+{% endblock %}
+</head>
+
+<body>
+{% block navbar %}
+	<nav class="navbar">
+		<div>
+			<p class="logo"><a href="#">Rate<span>Flix</span></a></p>
+			<ul class="nav-links">
+				<li>
+					<a href="#">Netflix Movies</a>
+				</li>
+				<li>
+					<a href="#">Netflix TV shows</a>
+				</li>
+				<li>
+					<a href="#">For Kids</a>
+				</li>
+			</ul>
+		</div>
+		<div class="search-bar">
+			<form action="#" method="GET">
+			<input size="50" name="search" type="search" placeholder="search for your favorite movies to see what other people thinks">
+			<button type="submit">Search</button>
+				</form>
+		</div>
+		{% if session["name"] and session["logged_in"] %}<p id="welcome">Welcome, {{session["name"]}}</p><button id="logout"><a href="{{ url_for("logout") }}">Logout</a></button>
+			{% else %}<button type="button"> <a href="#">Login/Register</a></button>
+			 {% endif %}
+
+	</nav>
+	<hr>
+{% endblock %}
+{% block body %}
+	{% block page_content %}
+
+	{% endblock %}
+
+		{% block footer%}
+
+			{% if not session.logged_in %}
+	<div id="btn-large">
+		<h3> Login/signup to get the complete list of movie recommendations</h3>
+		<button id="button_large"><a href="#">Click here to get started</a></button>
+	</div>
+	{% endif %}
+
+			<div class="footer">
+				<p> RateFlix is a movie recommendations website that provides the best movie options for all occassions</p>
+				<p>&copy; 2022 Rateflix inc.</p>
+			</div>
+
+			{% endblock %}
+
+
+
+{% endblock %}
+
+</body>
+</html>
