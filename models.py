@@ -1,11 +1,14 @@
 import sqlite3
 import csv
+import sys
 
 #opening the connection to the database
 DATABASE = "netflix_dbase.db"
-connection =sqlite3.connect(DATABASE)
-cursor = connection.cursor()
-
+try:
+    connection =sqlite3.connect(DATABASE)
+    cursor = connection.cursor()
+except:
+    print("Connection error, cannot connect to the database, check to see that sqlite3 is imported and that the database path is correct")
 #removing tables if they exist when we need to update the database
 connection.execute("DROP TABLE IF EXISTS movie")
 connection.execute("DROP TABLE IF EXISTS ratings")
@@ -44,3 +47,41 @@ connection.execute("CREATE TABLE users(\
     FOREIGN KEY(MOVIE_ID) REFERENCES movie(MOVIE_ID))")
 
 print("tables created successfully")
+
+#loading the open data into the rows in our database
+
+try:
+    file = open("open_data/clean_df1.csv",mode="r", newline="")
+except OSError:
+    print(f"Could not open file ")
+    sys.exit()
+except FileNotFoundError:
+    print(f"No such file or directory : {file}")
+
+try:
+    with file:
+        reader = csv.reader(file, delimiter=",")
+        next(reader)
+        for row in reader:
+            MOVIE_ID = row[0]
+            MOVIE_TITLE = row[1]
+            DIRECTOR = row[2]
+            CAST = row[3]
+            COUNTRY = row[4]
+            RELEASE_DATE =row[5]
+            DESCRIPTION= row[8]
+            GENRE = row[13]
+            RATING = float(row[14])
+            NUMBER_OF_VOTES= int(row[15])
+            YEAR_ADDED = row[16]
+            TYPE= row[9]
+            TV_RATING = row[6]
+            cursor.execute('INSERT INTO movie VALUES (?,?,?,?,?,?,?,?,?,?)', (MOVIE_ID, MOVIE_TITLE,DIRECTOR,CAST,COUNTRY,RELEASE_DATE,DESCRIPTION,GENRE, TYPE, TV_RATING))
+            cursor.execute('INSERT INTO ratings VALUES (?,?,?,?)',(MOVIE_ID,RATING, NUMBER_OF_VOTES, YEAR_ADDED))
+            connection.commit()
+        connection.close()
+    file.close()
+    print("data parsed successfully")
+
+except SyntaxError as error:
+    print(f"Please check that you are using the correct SQL commands, {error}")
