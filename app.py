@@ -46,5 +46,26 @@ def tvshows():
 
     return render_template('tvshows.html', rows=rows)
 
+app.route('/kidshow')
+def kidshow():
+    connection = sqlite3.connect(db_name)
+    connection.row_factory = sqlite3.Row
+    cursor = connection.cursor()
+    if session.get("logged_in"):
+        cursor.execute(
+        "Select * from movie INNER JOIN ratings ON ratings.MOVIE_ID = movie.MOVIE_ID WHERE"
+        " movie.TV_RATING!=\"NC-17\" AND movie.TV_RATING!=\"NR\" AND movie.TV_RATING!=\"R\" AND movie.TV_RATING!=\"rating\""
+        "AND movie.TV_RATING!=\"TV-14\" AND movie.TV_RATING!=\"TV-MA\" AND movie.TV_RATING!=\"UR\" ORDER BY ratings.RATING DESC")
+    else:
+        cursor.execute(
+            "Select * from movie INNER JOIN ratings ON ratings.MOVIE_ID = movie.MOVIE_ID WHERE"
+            " movie.TV_RATING!=\"NC-17\" AND movie.TV_RATING!=\"NR\" AND movie.TV_RATING!=\"R\" AND movie.TV_RATING!=\"rating\""
+            "AND movie.TV_RATING!=\"TV-14\" AND movie.TV_RATING!=\"TV-MA\" AND movie.TV_RATING!=\"UR\" ORDER BY ratings.RATING DESC LIMIT 10")
+
+    rows = cursor.fetchall()
+    connection.close()
+
+    return render_template('kidshow.html', rows=rows)
+
 if __name__ == "__main__":
     app.run(debug=True)
