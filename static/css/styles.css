@@ -237,3 +237,24 @@ button a{
 .login-button button:hover{
     background-color: #E50914;
 }
+
+.login-form{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.login-form input, .login-form label{
+    display: block;
+    width: 30%;
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.login-form label{
+    color: whitesmoke;
+}
+
+#submit{
+    background-color: #E50914;
+    width: 100px;
+    font-size: large;
+}

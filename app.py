@@ -1,8 +1,9 @@
 import sqlite3
-from flask import Flask, render_template, session, request
+import os, binascii
+from flask import Flask, render_template, session, request, redirect, url_for
 
 app = Flask(__name__)
-
+app.config["SECRET_KEY"]= binascii.hexlify(os.urandom(32))
 DATABASE = "netflix_dbase.db"
 
 def connect_db_row():
@@ -99,3 +100,27 @@ def register():
             session["logged_in"]= True
             return redirect(url_for("movies"))
     return render_template("register.html")
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method=="POST":
+        email= request.form.get("email")
+        password=request.form.get("password")
+        connection = sqlite3.connect(DATABASE)
+        connection.row_factory = lambda cursor, row:row[0]
+        cursor = connection.cursor()
+        cursor.execute("SELECT FIRSTNAME FROM users WHERE users.EMAIL = ? and users.PASSWORD = ?",(email,password))
+        rows = cursor.fetchall()
+        if rows:
+            session["name"] = rows[0]
+            session["logged_in"] = True
+        return redirect(url_for('movies'))
+    return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    session.pop("name", None)
+    session["logged_in"]= False
+    return redirect(url_for('index'))
