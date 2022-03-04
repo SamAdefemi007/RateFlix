@@ -1,5 +1,6 @@
 attrs==21.4.0
 click==8.0.4
+dataclasses==0.8
 Flask==2.0.3
 gunicorn==20.1.0
 importlib-metadata==4.8.3
@@ -11,6 +12,7 @@ packaging==21.3
 pkg-resources==0.0.0
 pluggy==1.0.0
 py==1.11.0
+python==3.6.9
 pyparsing==3.0.7
 pytest==7.0.1
 tomli==1.2.3
