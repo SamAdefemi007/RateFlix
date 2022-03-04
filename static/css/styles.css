@@ -109,3 +109,69 @@ index-bg h3{
 .btn-index button:hover{
     background-color: #141414;
 }
+
+.page-movie{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.movie-card img{
+    width: 200px;
+}
+
+.movie-card{
+    border:2px solid #141414;
+    margin: 7px 10px;
+    width: 15%;
+    justify-content: flex-start;
+}
+
+#header{
+    text-align: center;
+    color: whitesmoke;
+}
+
+.movie-title{
+    color: #E50914;
+}
+
+#ratings img{
+   width: 30px;
+
+}
+italic{
+    font-style: italic;
+}
+
+#btn-large{
+    height:800px;
+    width: 100%;
+background: url("/static/imgs/bg-4.jpeg") no-repeat;
+    background-size: cover;
+display: flex;
+    font-size: x-large;
+align-items: center;
+  flex-direction: column;
+}
+
+#button_large{
+    display: block;
+    padding: 1em;
+    font-size: x-large;
+    border-radius: 20px;
+}
+#button_large:hover{
+    background-color: #E50914;
+}
+
+.footer{
+    color: whitesmoke;
+    padding: 1em;
+}
+
+button a{
+    text-decoration: none;
+}
