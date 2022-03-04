@@ -1,0 +1,285 @@
+body{
+    background-color: #141414;
+}
+
+.logo{
+    font-size: xx-large;
+    margin-top: 0;
+    color: whitesmoke;
+    display: inline;
+    margin-right: 1em;
+    text-decoration: none;
+}
+.logo a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.logo span{
+    color: #E50914;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.nav-links, .nav-links li{
+    display: inline;
+}
+.nav-links li a{
+    text-decoration: none;
+    border: 0.5px solid black;
+    font-size: large;
+    margin-right: 1em;
+    padding: 0.3em;
+    color:whitesmoke;
+}
+.nav-links li a:hover{
+    background-color: #E50914;
+}
+
+.search-bar input{
+    padding: 12px 20px 12px 40px;
+    margin-top: 0.7em;
+    font-style: italic;
+    border-radius: 10px;
+    border:1px solid #E50914;
+    height: 40px;
+    background-image: url("/static/imgs/search2.svg");
+    background-position: 5px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.navbar button{
+    margin-right: 1em;
+    color: #141414;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: medium;
+    border:1px solid #E50914;
+}
+.navbar button:hover{
+    background-color: #E50914;
+}
+
+.index-bg{
+    background-image: url("/static/imgs/background.jpeg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 1000px;
+    width: 100%;
+    margin: auto;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.index-bg h3{
+    font-size: xx-large;
+    margin-bottom: 0;
+
+}
+
+.index-bg p{
+    font-size: large;
+    margin-top: 0;
+}
+
+.btn-index{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn-index button{
+    margin: 0 4em;
+    padding: 10px;
+    font-size: x-large;
+    background-color: #E50914;
+
+}
+
+.btn-index button a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.btn-index button:hover{
+    background-color: #141414;
+}
+
+.page-movie{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.movie-card img{
+    width: 200px;
+}
+
+.movie-card{
+    border:2px solid #141414;
+    margin: 7px 10px;
+    width: 15%;
+    justify-content: flex-start;
+}
+
+#header{
+    text-align: center;
+    color: whitesmoke;
+}
+
+.movie-title{
+    color: #E50914;
+}
+
+#ratings img{
+   width: 30px;
+
+}
+italic{
+    font-style: italic;
+}
+
+.register-form{
+    color:black;
+    margin:auto;
+    width: 15%;
+    font-size: large;
+}
+
+
+.register-form input, .register-form select{
+    display: block;
+    margin-bottom: 2em;
+    padding: 7px;
+    border:2px solid black;
+}
+.register-form button{
+    margin-top: 2em;
+    display: block;
+    margin-bottom: 2em;
+    padding:10px;
+    border: 2px solid #E50914;
+    background-color: black;
+    color: whitesmoke;
+}
+.register-form button:hover{
+    background-color: greenyellow;
+    color: #E50914;
+}
+.register-form label{
+    color: firebrick;
+}
+#login-page{
+    background-image: url("/static/imgs/bg-login2.jpeg");
+    height: 1000px;
+    background-size: contain;
+}
+
+.register-form h3{
+    font-size: x-large;
+}
+
+#welcome{color: white;
+font-size: large}
+
+#btn-large h3{
+    color: #141414;
+font-size: x-large;
+text-align: center;
+    display: block;
+}
+
+#btn-large{
+    height:800px;
+    width: 100%;
+background: url("/static/imgs/bg-4.jpeg") no-repeat;
+    background-size: cover;
+display: flex;
+    font-size: x-large;
+align-items: center;
+  flex-direction: column;
+}
+
+#button_large{
+    display: block;
+    padding: 1em;
+    font-size: x-large;
+    border-radius: 20px;
+}
+#button_large:hover{
+    background-color: #E50914;
+}
+
+.footer{
+    background-color: #141414;
+    color: whitesmoke;
+    padding: 1em;
+}
+
+button a{
+    text-decoration: none;
+}
+
+#logout{
+    background-color: transparent;
+    padding: 0.5em;
+
+}
+#logout a{
+    color: whitesmoke;
+    font-size: msma;
+}
+
+#logout a:hover{
+    background-color: white;
+    color: #E50914;
+}
+
+.login-button{
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+
+.login-button span{
+    margin-left: 70px;
+}
+
+.login-button button{
+    font-size: medium;
+    padding: .5em;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+
+.login-button button:hover{
+    background-color: #E50914;
+}
+.login-form{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.login-form input, .login-form label{
+    display: block;
+    width: 30%;
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.login-form label{
+    color: whitesmoke;
+}
+
+#submit{
+    background-color: #E50914;
+    width: 100px;
+    font-size: large;
+}

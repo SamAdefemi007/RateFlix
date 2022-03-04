@@ -20,6 +20,7 @@ def test_db_table_creation():
     cursor = connection.cursor()
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
     assert cursor.fetchall() == [("sqlite_sequence",),("movie",),("ratings",),("users",)]
+    connection.close()
     #tables created successfully in the database
 
 #def test_table_data():
@@ -27,6 +28,7 @@ def test_db_table_creation():
     #cursor = connection.cursor()
     #cursor.execute("SELECT count(*) from movie")
     #assert cursor.fetchall()==[(4169,)]
+    #connection.close()
     #all rows in the open_data loaded successfully
     #This particular tests takes about 3-4mins to run
 

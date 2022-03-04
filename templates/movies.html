@@ -1,0 +1,35 @@
+{%  extends 'base.html' %}
+
+{% block page_content %}
+	{% if session.name and session.logged_in %}
+	<h2 id="header"> Please see below the list of all our movies</h2>
+	{% else %}
+	<h2 id="header"> Please see below our Top 10 movies</h2>
+	{% endif %}
+	<div class="page-movie">
+
+		{% for row in rows %}
+
+			<div class="movie-card">
+			<img src="/static/imgs/movie-placeholder.jpeg">
+			<h3>Title:  <span class="movie-title">{{ row["MOVIE_TITLE"] |capitalize}}</span> |
+				<span id="ratings"><img src="/static/imgs/review.png"></span> {{ row["RATING"] }} </h3>
+
+			<p><italic>Genre: {{ row["GENRE"] }}</italic></p>
+			<p>Plot: {{ row["DESCRIPTION"] }}- <span class="movie-title">{{ row["YEAR_ADDED"] }}</span></p>
+
+			</div>
+			<hr>
+
+
+
+
+	{% endfor %}
+	</div>
+
+		<hr>
+		<br>
+
+
+
+{% endblock %}
