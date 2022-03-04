@@ -1,0 +1,38 @@
+* 4114f5a : fixing the sessions on heroku
+* 001a0ce : re-initialization
+* 0b6bcb9 : final app
+* f30c4b2 : update of the favicon
+* 8cb4ca5 : refactor
+* faf5475 : alls
+* 8aa0a50 : all
+* 3fbeb1b : issues with python
+* 316cc8e : requirements change
+* 8e35d35 : final deploy
+* 60c35a3 : initial deploy
+* 971e07b : more refactoring
+* 5bf5638 : refactoring and more error handling
+* 097f8e5 : final testing concluded
+* 0ed3dbe : added the login and logout logic, html files and styles
+* f24b7e1 : created the register page and logic to insert customer information into users table
+* f88471e : implemented the search query logic on the index page and tested it accordingly
+* 9939928 : replicated the movies.html logic for tvshows and kidshows
+* f667db3 : creating the logic for movies route and styling the page
+* ef5d249 : styling with css and added some images
+* a611eb3 : basic index html page setup
+* c76978a : the header and footer is defined in the base while the index page inherits it
+* 030cb38 : adding the templates and static folder for the front end
+*   f9f3cf7 : sam Merge branch 'master' of github.com:SamAdefemi007/rateflixv2
+|\  
+| * 4b71fcf : Delete app.py
+| * 5aa2d01 : Delete dbhelper.py
+| * 5bc5192 : Delete static directory
+| * 14a95a9 : Delete templates directory
+| * 1532800 : adding the kidshow logic to the files
+| * b05b24e : creating the html files, stylesheet and the routes to handle them
+* | a4fe224 : revert all Revert "adding the html files for the index page"
+* | 7862b09 : adding the html files for the index page
+|/  
+* 024dec8 : database loaded successfully and testing concluded for the database
+* f45f526 : database tables creating and testing concluded
+* d795b4d : page setup complete
+* 30f1dee : virtual env setup
