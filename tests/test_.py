@@ -1,4 +1,7 @@
+import sqlite3
 from rateflix.app import app
+from rateflix import models
+from pathlib import Path
 
 def test_page_setup():
     #page setup testing as done in TDD development by https://github.com/mjhea0/flaskr-tdd
@@ -6,3 +9,15 @@ def test_page_setup():
     response = tester.get("/", content_type = "html/text")
     assert response.status_code ==200
     assert response.data == b"Hello, World!"
+
+
+def test_db_file():
+    assert Path(models.DATABASE).is_file()
+    #test passed
+
+def test_db_table_creation():
+    connection =sqlite3.connect(models.DATABASE)
+    cursor = connection.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    assert cursor.fetchall() == [("sqlite_sequence",),("movie",),("ratings",),("users",)]
+    #tables created successfully in the database
